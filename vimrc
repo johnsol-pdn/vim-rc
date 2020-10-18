@@ -3,10 +3,11 @@ set encoding=utf8
 "Включает колонку нумерации строк
 set number
 set numberwidth=4
+set cursorline
 
 set laststatus=2
 
-set statusline=%#StatusLineWhite#\ %n:\ %f\ %r\ %#StatusLineCyan#\ %{&ff}\ %#StatusLineBlack#%=%#StatusLineCyan#\ %l:%c\ 
+set statusline=%#StatusLineWhite#\ %n:\ %f\ %r\ %#StatusLineCyan#\ %{&ff}\ %#StatusLineGrey#%=%#StatusLineCyan#\ %l:%c\ 
 "Выключает перенос строк
 set nowrap
 
