@@ -1,3 +1,5 @@
+set nocompatible
+
 set encoding=utf8
 
 "Включает колонку нумерации строк
