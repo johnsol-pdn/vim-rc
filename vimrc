@@ -9,7 +9,7 @@ set cursorline
 
 set laststatus=2
 
-set statusline=%#StatusLineWhite#\ %n:\ %f\ %r\ %#StatusLineCyan#\ %{&ff}\ %#StatusLineGrey#%=%#StatusLineCyan#\ %l:%c\ 
+set statusline=%#StatusLineWhite#\ %n:\ %f\ %r\ %#StatusLineCyan#\ %{&ff}\ %#StatusLineClear#%=%#StatusLineCyan#\ %l:%c\ 
 "Выключает перенос строк
 set nowrap
 
@@ -27,9 +27,9 @@ set autoindent
 set smartindent
 
 "Кеймапы для запуска Python скриптов
-autocmd BufRead *.py nnoremap <F5> :!python %<CR>
-autocmd BufRead *.py nnoremap <F6> :!sudo python %<CR>
-autocmd BufRead *.py nnoremap <F9> :!pep8 --max-line-length=230 %<CR>
+autocmd BufRead *.py nmap <F5> :!python %<CR>
+autocmd BufRead *.py nmap <F6> :!sudo python %<CR>
+autocmd BufRead *.py nmap <F9> :!pep8 --max-line-length=230 %<CR>
 
 "Кеймапы запуска Bash скриптов
 autocmd BufRead *.sh nnoremap <F5> :!bash %<CR>
