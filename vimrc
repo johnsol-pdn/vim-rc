@@ -1,3 +1,5 @@
+syntax on
+
 set nocompatible
 
 set encoding=utf8
@@ -33,6 +35,9 @@ autocmd BufRead *.py nmap <F9> :!pep8 --max-line-length=230 %<CR>
 
 "Кеймапы запуска Bash скриптов
 autocmd BufRead *.sh nnoremap <F5> :!bash %<CR>
+
+"Перенос сток для .md файлов
+autocmd BufRead *.md set wrap
 
 "Кеймапы обновления темы vim
 autocmd BufRead *.vim nnoremap <F5> :colorscheme test_scheme<CR>
