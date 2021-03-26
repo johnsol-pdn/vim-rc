@@ -40,7 +40,7 @@ autocmd BufRead *.sh nnoremap <F5> :!bash %<CR>
 autocmd BufRead *.md set wrap
 
 "Кеймапы обновления темы vim
-autocmd BufRead *.vim nnoremap <F5> :colorscheme test_scheme<CR>
+autocmd BufRead *.vim nnoremap <F5> :colorscheme my_first_scheme<CR>
 
 "Установка своей цветовой схемы
-colorscheme test_scheme
+colorscheme my_first_scheme
