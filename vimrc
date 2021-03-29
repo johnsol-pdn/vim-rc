@@ -37,7 +37,7 @@ set autoindent
 set smartindent
 
 "Кеймапы для NERDTree
-nmap <F2> :NERDTreeToggle<CR>
+nmap <C-n><C-t> :NERDTreeToggle<CR>
 
 "Кеймапы для запуска Python скриптов
 autocmd BufRead *.py nmap <F5> :!python3 %<CR>
