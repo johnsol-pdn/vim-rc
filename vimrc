@@ -1,6 +1,14 @@
+"Менеджер плагинов: Vim-Plug
+"Подключение плагинов (для установки - :PlugInstal)
+call plug#begin('~/.vim/plugged')
+    Plug 'preservim/nerdtree'
+call plug#end()
+
+"Включаем подсветку синтаксиса
 syntax on
 
 set nocompatible
+set mouse=a
 
 set encoding=utf8
 
@@ -10,8 +18,8 @@ set numberwidth=4
 set cursorline
 
 set laststatus=2
-
 set statusline=%#StatusLineWhite#\ %n:\ %f\ %r\ %#StatusLineCyan#\ %{&ff}\ %#StatusLineClear#%=%#StatusLineCyan#\ %l:%c\ 
+
 "Выключает перенос строк
 set nowrap
 
@@ -28,9 +36,12 @@ set softtabstop=4
 set autoindent
 set smartindent
 
+"Кеймапы для NERDTree
+nmap <F2> :NERDTreeToggle<CR>
+
 "Кеймапы для запуска Python скриптов
-autocmd BufRead *.py nmap <F5> :!python %<CR>
-autocmd BufRead *.py nmap <F6> :!sudo python %<CR>
+autocmd BufRead *.py nmap <F5> :!python3 %<CR>
+autocmd BufRead *.py nmap <F6> :!sudo python3 %<CR>
 autocmd BufRead *.py nmap <F9> :!pep8 --max-line-length=230 %<CR>
 
 "Кеймапы запуска Bash скриптов
