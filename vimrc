@@ -2,13 +2,15 @@
 "Подключение плагинов (для установки - :PlugInstal)
 call plug#begin('~/.vim/plugged')
     Plug 'preservim/nerdtree'
+    Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 "Включаем подсветку синтаксиса
 syntax on
 
 set nocompatible
-set mouse=a
+" Включение поддержки мыши
+"set mouse=a
 
 set encoding=utf8
 
@@ -17,8 +19,17 @@ set number
 set numberwidth=4
 set cursorline
 
+"Настройки строки статуса
 set laststatus=2
-set statusline=%#StatusLineWhite#\ %n:\ %f\ %r\ %#StatusLineCyan#\ %{&ff}\ %#StatusLineClear#%=%#StatusLineCyan#\ %l:%c\ 
+
+set statusline=
+set statusline+=%#StatusLineGrey#\ %n:\ 
+set statusline+=%#StatusLineWhite#\ %f\ 
+set statusline+=%#StatusLineCyan#\ %{&ff}\ 
+set statusline+=%#StatusLineClear#%=
+set statusline+=%r\ %y\ 
+set statusline+=%#StatusLineCyan#\ %p%%\ 
+set statusline+=%#StatusLineWhite#\ %l:%c\ 
 
 "Выключает перенос строк
 set nowrap
@@ -37,7 +48,7 @@ set autoindent
 set smartindent
 
 "Кеймапы для NERDTree
-nmap <C-n><C-t> :NERDTreeToggle<CR>
+nmap <C-n> :NERDTreeToggle<CR>
 
 "Кеймапы для запуска Python скриптов
 autocmd BufRead *.py nmap <F5> :!python3 %<CR>

@@ -17,6 +17,7 @@ hi ModeMsg         ctermfg=0   ctermbg=14  cterm=NONE
 hi NonText         ctermfg=215
 hi Visual                      ctermbg=241
 
+hi StatusLineGrey  ctermfg=0   ctermbg=251
 hi StatusLineWhite ctermfg=0   ctermbg=15 
 hi StatusLineCyan  ctermfg=0   ctermbg=14
 hi StatusLineClear                         cterm=NONE
