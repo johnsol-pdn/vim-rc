@@ -1,8 +1,8 @@
 "Функция получения текущего режима редактора
 function GetMode()
-    let s:editor_mode = mode()
+    let l:editor_mode = mode()
 
-    let s:editor_modes_list = [
+    let l:editor_modes_list = [
         \ "NORMAL", 
         \ "INSERT",
         \ "VISUAL",
@@ -11,25 +11,36 @@ function GetMode()
         \ "REPLACE"
         \ ]
 
-    if s:editor_mode == "n"
-        return s:editor_modes_list[0]
+    if l:editor_mode == "n"
+        return l:editor_modes_list[0]
 
-    elseif s:editor_mode == "i"
-        return s:editor_modes_list[1]
+    elseif l:editor_mode == "i"
+        return l:editor_modes_list[1]
 
-    elseif s:editor_mode == "v"
-        return s:editor_modes_list[2]
-    elseif s:editor_mode == "V"
-        return s:editor_modes_list[3]
-    elseif s:editor_mode =="\<C-v>"
-        return s:editor_modes_list[4]
+    elseif l:editor_mode == "v"
+        return l:editor_modes_list[2]
+    elseif l:editor_mode == "V"
+        return l:editor_modes_list[3]
+    elseif l:editor_mode =="\<C-v>"
+        return l:editor_modes_list[4]
 
-    elseif s:editor_mode == "R"
-        return s:editor_modes_list[5]
+    elseif l:editor_mode == "R"
+        return l:editor_modes_list[5]
 
     else
         return "?MODE"
     endif
+endfunction
+
+"Git branch
+function GetGitBranchName()
+    return system('git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d "\n"')
+endfunction
+
+function StatuslineGetGitBranch()
+    let l:branch = GetGitBranchName()
+
+    return strlen(l:branch) > 0 ? l:branch : ''
 endfunction
 
 "Менеджер плагинов: Vim-Plug
@@ -60,13 +71,18 @@ set noshowmode
 set laststatus=2
 
 set statusline=
-set statusline+=%#StatusLineCyan#\ %{GetMode()}\ 
-set statusline+=%#StatusLineWhite#\ %f\ 
-set statusline+=%#StatusLineGrey#\ %{&ff}\ 
-set statusline+=%#StatusLineClear#%=
-set statusline+=%r\ %y\ 
-set statusline+=%#StatusLineWhite#\ %l:%c\ 
-set statusline+=%#StatusLineCyan#\ %p%%\ 
+set statusline+=%#StatusLineEditorMode#\ %{GetMode()}\ 
+if strlen(GetGitBranchName()) > 0
+    set statusline+=%#StatusLineGitBranch#\ %{StatuslineGetGitBranch()}\ 
+endif
+set statusline+=%#StatusLineFileName#\ %f\ 
+set statusline+=%#StatusLineFileFormat#\ %{&ff}\ 
+set statusline+=%#StatusLineEmpty#%=
+set statusline+=%#StatusLineReadOnlyFlag#\ %r\ 
+set statusline+=%#StatusLineEncoding#\ %{&fileencoding?&fileencoding:&encoding}\ 
+set statusline+=%#StatusLineFileType#\ %{&ft}\ 
+set statusline+=%#StatusLinePercentPos#\ %p%%\ 
+set statusline+=%#StatusLinePosition#\ %l:%c\ 
 
 "Выключает перенос строк
 set nowrap
@@ -99,7 +115,7 @@ autocmd BufRead *.sh nnoremap <F5> :!bash %<CR>
 autocmd BufRead *.md set wrap
 
 "Кеймапы обновления темы vim
-autocmd BufRead *.vim nnoremap <F5> :colorscheme my_first_scheme<CR>
+autocmd BufRead *.vim nnoremap <F5> :source %<CR>
 
 "Установка своей цветовой схемы
 colorscheme my_first_scheme
