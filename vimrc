@@ -1,3 +1,37 @@
+"Функция получения текущего режима редактора
+function GetMode()
+    let s:editor_mode = mode()
+
+    let s:editor_modes_list = [
+        \ "NORMAL", 
+        \ "INSERT",
+        \ "VISUAL",
+        \ "VISUAL-LINE",
+        \ "VISUAL-BLOCK",
+        \ "REPLACE"
+        \ ]
+
+    if s:editor_mode == "n"
+        return s:editor_modes_list[0]
+
+    elseif s:editor_mode == "i"
+        return s:editor_modes_list[1]
+
+    elseif s:editor_mode == "v"
+        return s:editor_modes_list[2]
+    elseif s:editor_mode == "V"
+        return s:editor_modes_list[3]
+    elseif s:editor_mode =="\<C-v>"
+        return s:editor_modes_list[4]
+
+    elseif s:editor_mode == "R"
+        return s:editor_modes_list[5]
+
+    else
+        return "?MODE"
+    endif
+endfunction
+
 "Менеджер плагинов: Vim-Plug
 "Подключение плагинов (для установки - :PlugInstal)
 call plug#begin('~/.vim/plugged')
@@ -19,17 +53,20 @@ set number
 set numberwidth=4
 set cursorline
 
+"Не показывать режим (он отображается в нашей строке статуса)
+set noshowmode
+
 "Настройки строки статуса
 set laststatus=2
 
 set statusline=
-set statusline+=%#StatusLineGrey#\ %n:\ 
+set statusline+=%#StatusLineCyan#\ %{GetMode()}\ 
 set statusline+=%#StatusLineWhite#\ %f\ 
-set statusline+=%#StatusLineCyan#\ %{&ff}\ 
+set statusline+=%#StatusLineGrey#\ %{&ff}\ 
 set statusline+=%#StatusLineClear#%=
 set statusline+=%r\ %y\ 
-set statusline+=%#StatusLineCyan#\ %p%%\ 
 set statusline+=%#StatusLineWhite#\ %l:%c\ 
+set statusline+=%#StatusLineCyan#\ %p%%\ 
 
 "Выключает перенос строк
 set nowrap
