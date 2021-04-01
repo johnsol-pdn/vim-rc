@@ -32,17 +32,6 @@ function GetMode()
     endif
 endfunction
 
-"Git branch
-function GetGitBranchName()
-    return system('git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d "\n"')
-endfunction
-
-function StatuslineGetGitBranch()
-    let l:branch = GetGitBranchName()
-
-    return strlen(l:branch) > 0 ? l:branch : ''
-endfunction
-
 "Менеджер плагинов: Vim-Plug
 "Подключение плагинов (для установки - :PlugInstal)
 call plug#begin('~/.vim/plugged')
@@ -72,9 +61,6 @@ set laststatus=2
 
 set statusline=
 set statusline+=%#StatusLineEditorMode#\ %{GetMode()}\ 
-if strlen(GetGitBranchName()) > 0
-    set statusline+=%#StatusLineGitBranch#\ %{StatuslineGetGitBranch()}\ 
-endif
 set statusline+=%#StatusLineFileName#\ %f\ 
 set statusline+=%#StatusLineFileFormat#\ %{&ff}\ 
 set statusline+=%#StatusLineEmpty#%=

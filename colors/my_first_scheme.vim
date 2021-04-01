@@ -19,7 +19,6 @@ hi Visual                           ctermbg=241
 
 "Цвета, используемые в статусной строке
 hi StatusLineEditorMode ctermfg=15  ctermbg=57   cterm=bold
-hi StatusLineGitBranch  ctermfg=15  ctermbg=63   cterm=bold
 hi StatusLineFilePath   ctermfg=0   ctermbg=15
 hi StatusLineFileFormat ctermfg=0   ctermbg=251
 hi StatusLineEmpty                  ctermbg=239
