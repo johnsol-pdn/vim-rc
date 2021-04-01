@@ -35,7 +35,6 @@ endfunction
 "Менеджер плагинов: Vim-Plug
 "Подключение плагинов (для установки - :PlugInstal)
 call plug#begin('~/.vim/plugged')
-    Plug 'preservim/nerdtree'
     Plug 'airblade/vim-gitgutter'
 call plug#end()
 
@@ -85,9 +84,6 @@ set softtabstop=4
 "Автодополнение отступов
 set autoindent
 set smartindent
-
-"Кеймапы для NERDTree
-nmap <C-n> :NERDTreeToggle<CR>
 
 "Кеймапы для запуска Python скриптов
 autocmd BufRead *.py nmap <F5> :!python3 %<CR>
