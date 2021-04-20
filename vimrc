@@ -88,7 +88,7 @@ set smartindent
 "Кеймапы для запуска Python скриптов
 autocmd BufRead *.py nmap <F5> :!python3 %<CR>
 autocmd BufRead *.py nmap <F6> :!sudo python3 %<CR>
-autocmd BufRead *.py nmap <F9> :!pep8 --max-line-length=230 %<CR>
+autocmd BufRead *.py nmap <F9> :!pep8 %<CR>
 
 "Кеймапы запуска Bash скриптов
 autocmd BufRead *.sh nnoremap <F5> :!bash %<CR>

@@ -9,35 +9,36 @@ set bg=dark
 let color_name="my_first_vim_theme"
 
 "=== Цвета псевдоинтерфейса ===
+hi Normal                                                          guifg=#ffffff guibg=#111111
 "Цвета линейки строк (та, что слева номера строк показыват)
-hi LineNr                 ctermfg=250 ctermbg=234  cterm=NONE
-hi CursorLineNr           ctermfg=250 ctermbg=236  cterm=bold
-hi CursorLine                                      cterm=underline
-hi ModeMsg                ctermfg=0   ctermbg=14   cterm=NONE
-hi NonText                ctermfg=215
-hi Visual                             ctermbg=241
+hi LineNr                 ctermfg=250 ctermbg=234  cterm=NONE      guifg=#bcbcbc guibg=#1c1c1c cterm=NONE
+hi CursorLineNr           ctermfg=250 ctermbg=236  cterm=bold      guifg=#bcbcbc guibg=#303030 gui=bold
+hi CursorLine                                      cterm=underline               guibg=NONE    gui=underline
+hi ModeMsg                ctermfg=0   ctermbg=14   cterm=NONE      guifg=#000000 guibg=#00ffff gui=NONE
+hi NonText                ctermfg=215                              guifg=#ffaf5f
+hi Visual                             ctermbg=241                                guibg=#626262
 
 "Цвета, используемые в статусной строке
-hi StatusLineEditorMode   ctermfg=15  ctermbg=57   cterm=bold
-hi StatusLineFilePath     ctermfg=0   ctermbg=15
-hi StatusLineFileFormat   ctermfg=0   ctermbg=251
-hi StatusLineEmpty                    ctermbg=239
-hi StatusLineReadOnlyFlag ctermfg=0   ctermbg=239
-hi StatusLineEncoding     ctermfg=0   ctermbg=251
-hi StatusLineFileType     ctermfg=0   ctermbg=15
-hi StatusLinePosition     ctermfg=15  ctermbg=57
-hi StatusLinePercentPos   ctermfg=15  ctermbg=63
+hi StatusLineEditorMode   ctermfg=15  ctermbg=57   cterm=bold      guifg=#ffffff guibg=#5f00ff gui=bold
+hi StatusLineFilePath     ctermfg=0   ctermbg=15                   guifg=#000000 guibg=#ffffff
+hi StatusLineFileFormat   ctermfg=0   ctermbg=251                  guifg=#000000 guibg=#c6c6c6
+hi StatusLineEmpty                    ctermbg=239                                guibg=#4e4e4e
+hi StatusLineReadOnlyFlag ctermfg=0   ctermbg=239                                guibg=#4e4e4e
+hi StatusLineEncoding     ctermfg=0   ctermbg=251                  guifg=#000000 guibg=#c6c6c6
+hi StatusLineFileType     ctermfg=0   ctermbg=15                   guifg=#000000 guibg=#ffffff
+hi StatusLinePosition     ctermfg=15  ctermbg=57                   guifg=#ffffff guibg=#5f00ff
+hi StatusLinePercentPos   ctermfg=15  ctermbg=63                   guifg=#ffffff guibg=#5f5fff
 
 "Vim-Gitgutter цвета
-hi SignColumn                         ctermbg=NONE
-hi GitGutterAdd           ctermfg=2                cterm=bold
-hi GitGutterChange        ctermfg=3                cterm=bold
-hi GitGutterDelete        ctermfg=1                cterm=bold
+hi SignColumn                         ctermbg=NONE                               guibg=NONE
+hi GitGutterAdd           ctermfg=2                cterm=bold      guifg=#008000               gui=bold
+hi GitGutterChange        ctermfg=3                cterm=bold      guifg=#808000               gui=bold
+hi GitGutterDelete        ctermfg=1                cterm=bold      guifg=#800000               gui=bold
 
 "=== Подсвтека синтаксиса ===
-hi Comment                ctermfg=248
-hi Constant               ctermfg=105
-hi Identifier             ctermfg=111
-hi Statement              ctermfg=204              cterm=bold
-hi PreProc                ctermfg=41
-hi Type                   ctermfg=79
+hi Comment                ctermfg=248                              guifg=#a8a8a8
+hi Constant               ctermfg=105                              guifg=#8787ff
+hi Identifier             ctermfg=111                              guifg=#87afff
+hi Statement              ctermfg=204              cterm=bold      guifg=#ff5f87               gui=bold
+hi PreProc                ctermfg=41                               guifg=#00d75f
+hi Type                   ctermfg=79                               guifg=#5fd7af
