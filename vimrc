@@ -3,7 +3,8 @@ function GetMode()
     let l:editor_mode = mode()
 
     let l:editor_modes_list = [
-        \ "NORMAL", 
+        \ "NORMAL",
+        \ "COMMAND",
         \ "INSERT",
         \ "VISUAL",
         \ "VISUAL-LINE",
@@ -14,20 +15,24 @@ function GetMode()
     if l:editor_mode == "n"
         return l:editor_modes_list[0]
 
-    elseif l:editor_mode == "i"
+    elseif l:editor_mode == "c"
         return l:editor_modes_list[1]
 
-    elseif l:editor_mode == "v"
+    elseif l:editor_mode == "i"
         return l:editor_modes_list[2]
-    elseif l:editor_mode == "V"
-        return l:editor_modes_list[3]
-    elseif l:editor_mode =="\<C-v>"
-        return l:editor_modes_list[4]
 
-    elseif l:editor_mode == "R"
+    elseif l:editor_mode == "v"
+        return l:editor_modes_list[3]
+    elseif l:editor_mode == "V"
+        return l:editor_modes_list[4]
+    elseif l:editor_mode =="\<C-v>"
         return l:editor_modes_list[5]
 
+    elseif l:editor_mode == "R"
+        return l:editor_modes_list[6]
+
     else
+        echo l:editor_mode
         return "?MODE"
     endif
 endfunction
@@ -66,8 +71,7 @@ set statusline+=%#StatusLineEmpty#%=
 set statusline+=%#StatusLineReadOnlyFlag#\ %r\ 
 set statusline+=%#StatusLineEncoding#\ %{&fileencoding?&fileencoding:&encoding}\ 
 set statusline+=%#StatusLineFileType#\ %{&ft}\ 
-set statusline+=%#StatusLinePercentPos#\ %p%%\ 
-set statusline+=%#StatusLinePosition#\ %l:%c\ 
+set statusline+=%#StatusLinePosition#\ %p%%\ %l:%c\ 
 
 "Выключает перенос строк
 set nowrap

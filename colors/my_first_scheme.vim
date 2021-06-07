@@ -18,15 +18,14 @@ hi NonText                ctermfg=215                              guifg=#ffaf5f
 hi Visual                             ctermbg=241                                guibg=#626262
 
 "Цвета, используемые в статусной строке
-hi StatusLineEditorMode   ctermfg=15  ctermbg=57   cterm=bold      guifg=#ffffff guibg=#5f00ff gui=bold
+hi StatusLineEditorMode   ctermfg=0   ctermbg=41                   guifg=#ffffff guibg=#5f00ff gui=bold
 hi StatusLineFilePath     ctermfg=0   ctermbg=15                   guifg=#000000 guibg=#ffffff
 hi StatusLineFileFormat   ctermfg=0   ctermbg=251                  guifg=#000000 guibg=#c6c6c6
 hi StatusLineEmpty                    ctermbg=239                                guibg=#4e4e4e
 hi StatusLineReadOnlyFlag ctermfg=0   ctermbg=239                                guibg=#4e4e4e
 hi StatusLineEncoding     ctermfg=0   ctermbg=251                  guifg=#000000 guibg=#c6c6c6
 hi StatusLineFileType     ctermfg=0   ctermbg=15                   guifg=#000000 guibg=#ffffff
-hi StatusLinePosition     ctermfg=15  ctermbg=57                   guifg=#ffffff guibg=#5f00ff
-hi StatusLinePercentPos   ctermfg=15  ctermbg=63                   guifg=#ffffff guibg=#5f5fff
+hi StatusLinePosition     ctermfg=0   ctermbg=41                   guifg=#ffffff guibg=#5f00ff
 
 "Vim-Gitgutter цвета
 hi SignColumn                         ctermbg=NONE                               guibg=NONE
