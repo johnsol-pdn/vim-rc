@@ -5,7 +5,7 @@ if exists("syntax_on")
 endif
 
 set bg=dark
-let color_name="my_first_vim_theme"
+let color_name="custom_scheme_dark"
 
 "=== Цвета псевдоинтерфейса ===
 "Цвета линейки строк (та, что слева номера строк показыват)
@@ -18,12 +18,12 @@ hi Visual                             ctermbg=241
 
 "Цвета, используемые в статусной строке
 hi StatusLineEditorMode   ctermfg=0   ctermbg=111
-hi StatusLineFileName     ctermfg=247 ctermbg=236
-hi StatusLineFileFormat   ctermfg=247 ctermbg=236
-hi StatusLineEmpty                    ctermbg=236
-hi StatusLineReadOnlyFlag ctermfg=247 ctermbg=236
-hi StatusLineEncoding     ctermfg=247 ctermbg=236
-hi StatusLineFileType     ctermfg=247 ctermbg=236
+hi StatusLineFileName     ctermfg=252 ctermbg=NONE cterm=bold
+hi StatusLineFileFormat   ctermfg=247 ctermbg=NONE
+hi StatusLineEmpty                    ctermbg=NONE
+hi StatusLineReadOnlyFlag ctermfg=247 ctermbg=NONE
+hi StatusLineEncoding     ctermfg=247 ctermbg=NONE
+hi StatusLineFileType     ctermfg=252 ctermbg=NONE cterm=bold
 hi StatusLinePosition     ctermfg=0   ctermbg=111
 
 "Vim-Gitgutter цвета

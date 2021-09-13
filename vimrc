@@ -104,4 +104,4 @@ autocmd BufRead *.md set wrap
 autocmd BufRead *.vim nnoremap <F5> :source %<CR>
 
 "Установка своей цветовой схемы
-colorscheme my_first_scheme
+colorscheme custom_scheme_dark
