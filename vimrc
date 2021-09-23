@@ -105,3 +105,6 @@ autocmd BufRead *.vim nnoremap <F5> :source %<CR>
 
 "Установка своей цветовой схемы
 colorscheme custom_scheme_dark
+
+"Довольно удобная реализация поддержки русских букв (говорят официальная)
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
