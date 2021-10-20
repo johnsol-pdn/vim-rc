@@ -1,3 +1,12 @@
+function LessBehaviour()
+    if (!&modifiable || &ro)
+        set nonumber
+        set nospell
+        set laststatus=0
+        set cmdheight=1
+    endif
+endfunction
+
 "Функция получения текущего режима редактора
 function GetMode()
     let l:editor_mode = mode()
@@ -108,3 +117,9 @@ colorscheme custom_scheme_dark
 
 "Довольно удобная реализация поддержки русских букв (говорят официальная)
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+
+"Автоматическое включение LessBehaviour
+augroup ReadOnly
+    au!
+    au VimEnter * :call LessBehaviour()
+augroup END
