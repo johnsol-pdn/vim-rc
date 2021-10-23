@@ -17,6 +17,9 @@ hi ModeMsg                cterm=NONE      ctermfg=0   ctermbg=14
 hi NonText                                ctermfg=215
 hi Visual                                             ctermbg=241
 
+" для заголовков markdown
+hi Title                  cterm=bold      ctermfg=171
+
 "Цвета, используемые в статусной строке
 hi StatusLineEditorMode                   ctermfg=0   ctermbg=111
 hi StatusLineFileName     cterm=bold      ctermfg=252 ctermbg=NONE
@@ -35,10 +38,23 @@ hi GitGutterDelete        cterm=bold      ctermfg=1
 
 "=== Подсвтека синтаксиса ===
 hi Comment                                ctermfg=248
+
 hi Constant                               ctermfg=153
+hi String                                 ctermfg=43
+hi Number                                 ctermfg=50
+hi Boolean                                ctermfg=197
+
 hi Identifier             cterm=NONE      ctermfg=147
+hi Function                               ctermfg=45
+
 hi Statement                              ctermfg=171
-hi PreProc                                ctermfg=203
-hi Type                                   ctermfg=152
-hi Todo                   cterm=bold      ctermfg=0   ctermbg=159
+
+hi PreProc                                ctermfg=47
+hi Include                cterm=bold      ctermfg=47
+
+hi Type                                   ctermfg=203
+
+hi Delimiter                              ctermfg=171
+
+hi Todo                   cterm=bold      ctermfg=0   ctermbg=186
 hi Error                                              ctermbg=197
