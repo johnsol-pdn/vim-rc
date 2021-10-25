@@ -61,6 +61,12 @@ set nocompatible
 
 set encoding=utf8
 
+set showtabline=0 "Убираем таблайн сверху
+
+"Запрещаем менять вид курсора
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 0
+set guicursor=
+
 "Включает колонку нумерации строк
 set number
 set numberwidth=4
