@@ -98,6 +98,15 @@ set softtabstop=4
 set autoindent
 set smartindent
 
+"Заставляем себя юзать только hjkl
+nnoremap <Left> :echoe "Use H pls"<CR>
+nnoremap <Right> :echoe "Use L pls"<CR>
+nnoremap <Up> :echoe "Use K pls"<CR>
+nnoremap <Down> :echoe "Use J pls"<CR>
+
+"Не тянись до ESC
+imap jk <ESC>
+
 "Кеймапы для запуска Python скриптов
 autocmd BufRead *.py nmap <F5> :!python3 %<CR>
 autocmd BufRead *.py nmap <F6> :!sudo python3 %<CR>
