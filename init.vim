@@ -116,8 +116,7 @@ imap jk <ESC>
 "Кеймапы для запуска Python скриптов
 autocmd BufRead *.py nmap <F5> :!python3 %<CR>
 autocmd BufRead *.py nmap <F6> :!sudo python3 %<CR>
-autocmd BufRead *.py nmap <F9> :!pycodestyle %<CR>
-autocmd BufRead *.py nmap <F10> :!pylint %<CR>
+autocmd BufRead *.py nmap <F9> :!pylint %<CR>
 
 "Кеймапы запуска Bash скриптов
 autocmd BufRead *.sh nnoremap <F5> :!bash %<CR>
