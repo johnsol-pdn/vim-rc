@@ -114,18 +114,17 @@ nnoremap <Down> :echoe "Use J pls"<CR>
 imap jk <ESC>
 
 "Кеймапы для запуска Python скриптов
-autocmd BufRead *.py nmap <F5> :!python3 %<CR>
-autocmd BufRead *.py nmap <F6> :!sudo python3 %<CR>
-autocmd BufRead *.py nmap <F9> :!pylint %<CR>
+autocmd VimEnter *.py nmap <F5> :12split term://python3 %<CR>
+autocmd VimEnter *.py nmap <F9> :10split term://pylint %<CR>
 
 "Кеймапы запуска Bash скриптов
-autocmd BufRead *.sh nnoremap <F5> :!bash %<CR>
+autocmd VimEnter *.sh nnoremap <F5> :!bash %<CR>
 
 "Перенос сток для .md файлов
-autocmd BufRead *.md set wrap
+autocmd VimEnter *.md set wrap
 
 "Кеймапы обновления темы vim
-autocmd BufRead *.vim nnoremap <F5> :source %<CR>
+autocmd VimEnter *.vim nnoremap <F5> :source %<CR>
 
 "Установка своей цветовой схемы
 colorscheme custom_scheme_dark
