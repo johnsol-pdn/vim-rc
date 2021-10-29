@@ -61,6 +61,8 @@ set nocompatible
 
 set encoding=utf8
 
+set showtabline=0 "Убираем таблайн сверху
+
 "Включает колонку нумерации строк
 set number
 set numberwidth=4
@@ -98,6 +100,9 @@ set softtabstop=4
 set autoindent
 set smartindent
 
+"Ограничиваем себя в размере строки
+set colorcolumn=80
+
 "Заставляем себя юзать только hjkl
 nnoremap <Left> :echoe "Use H pls"<CR>
 nnoremap <Right> :echoe "Use L pls"<CR>
@@ -108,19 +113,17 @@ nnoremap <Down> :echoe "Use J pls"<CR>
 imap jk <ESC>
 
 "Кеймапы для запуска Python скриптов
-autocmd BufRead *.py nmap <F5> :!python3 %<CR>
-autocmd BufRead *.py nmap <F6> :!sudo python3 %<CR>
-autocmd BufRead *.py nmap <F9> :!pycodestyle %<CR>
-autocmd BufRead *.py nmap <F10> :!pylint %<CR>
+autocmd VimEnter *.py nmap <F5> :!python3 %<CR>
+autocmd VimEnter *.py nmap <F9> :!pylint %<CR>
 
 "Кеймапы запуска Bash скриптов
-autocmd BufRead *.sh nnoremap <F5> :!bash %<CR>
+autocmd VimEnter *.sh nnoremap <F5> :!bash %<CR>
 
 "Перенос сток для .md файлов
-autocmd BufRead *.md set wrap
+autocmd VimEnter *.md set wrap
 
 "Кеймапы обновления темы vim
-autocmd BufRead *.vim nnoremap <F5> :source %<CR>
+autocmd VimEnter *.vim nnoremap <F5> :source %<CR>
 
 "Установка своей цветовой схемы
 colorscheme custom_scheme_dark

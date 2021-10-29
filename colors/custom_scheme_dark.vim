@@ -16,6 +16,7 @@ hi CursorLine             cterm=underline
 hi ModeMsg                cterm=NONE      ctermfg=0   ctermbg=14
 hi NonText                                ctermfg=215
 hi Visual                                             ctermbg=241
+hi ColorColumn                                        ctermbg=233
 
 " для заголовков markdown
 hi Title                  cterm=bold      ctermfg=171
