@@ -9,30 +9,34 @@ let color_name="custom_scheme_dark"
 
 "=== Цвета псевдоинтерфейса ===
 "Цвета линейки строк (та, что слева номера строк показыват)
-hi Normal                                             ctermbg=None
-hi LineNr                 cterm=NONE      ctermfg=241 ctermbg=NONE
-hi CursorLineNr           cterm=bold      ctermfg=250 ctermbg=237
+hi Normal                                              ctermbg=None
+hi LineNr                 cterm=NONE      ctermfg=241  ctermbg=NONE
+hi CursorLineNr           cterm=bold      ctermfg=250  ctermbg=237
 hi CursorLine             cterm=underline
-hi ModeMsg                cterm=NONE      ctermfg=0   ctermbg=14
+hi ModeMsg                cterm=NONE      ctermfg=0    ctermbg=14
 hi NonText                                ctermfg=215
-hi Visual                                             ctermbg=241
-hi ColorColumn                                        ctermbg=233
+hi Visual                                              ctermbg=241
+hi ColorColumn                                         ctermbg=250
+
+hi TabLine                cterm=underline ctermfg=252  ctermbg=None
+hi TabLineSel             cterm=None      ctermfg=0    ctermbg=111
+hi TabLineFill            cterm=underline ctermfg=None ctermbg=None
 
 " для заголовков markdown
 hi Title                  cterm=bold      ctermfg=171
 
 "Цвета, используемые в статусной строке
-hi StatusLineEditorMode                   ctermfg=0   ctermbg=111
-hi StatusLineFileName     cterm=bold      ctermfg=252 ctermbg=NONE
-hi StatusLineFileFormat                   ctermfg=247 ctermbg=NONE
-hi StatusLineEmpty                                    ctermbg=NONE
-hi StatusLineReadOnlyFlag                 ctermfg=247 ctermbg=NONE
-hi StatusLineEncoding                     ctermfg=247 ctermbg=NONE
-hi StatusLineFileType     cterm=bold      ctermfg=252 ctermbg=NONE
-hi StatusLinePosition                     ctermfg=0   ctermbg=111
+hi StatusLineEditorMode                   ctermfg=0    ctermbg=111
+hi StatusLineFileName     cterm=bold      ctermfg=252  ctermbg=NONE
+hi StatusLineFileFormat                   ctermfg=247  ctermbg=NONE
+hi StatusLineEmpty                                     ctermbg=NONE
+hi StatusLineReadOnlyFlag                 ctermfg=247  ctermbg=NONE
+hi StatusLineEncoding                     ctermfg=247  ctermbg=NONE
+hi StatusLineFileType     cterm=bold      ctermfg=252  ctermbg=NONE
+hi StatusLinePosition                     ctermfg=0    ctermbg=111
 
 "Vim-Gitgutter цвета
-hi SignColumn                                         ctermbg=NONE
+hi SignColumn                                          ctermbg=NONE
 hi GitGutterAdd           cterm=bold      ctermfg=2
 hi GitGutterChange        cterm=bold      ctermfg=3
 hi GitGutterDelete        cterm=bold      ctermfg=1
@@ -57,5 +61,5 @@ hi Type                                   ctermfg=203
 
 hi Delimiter                              ctermfg=171
 
-hi Todo                   cterm=bold      ctermfg=0   ctermbg=186
-hi Error                                              ctermbg=197
+hi Todo                   cterm=bold      ctermfg=0    ctermbg=186
+hi Error                                               ctermbg=197

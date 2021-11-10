@@ -1,12 +1,3 @@
-function LessBehaviour()
-    if (!&modifiable || &ro)
-        set nonumber
-        set nospell
-        set laststatus=0
-        set cmdheight=1
-    endif
-endfunction
-
 "Функция получения текущего режима редактора
 function GetMode()
     let l:editor_mode = mode()
@@ -61,7 +52,39 @@ set nocompatible
 
 set encoding=utf8
 
-set showtabline=0 "Убираем таблайн сверху
+set showtabline=2
+set tabline=%!TabLine()
+
+function TabLine()
+  let s = ''
+
+  for i in range(tabpagenr('$'))
+    " Выбираем, какую вкладку подсвечивать
+    if i + 1 == tabpagenr()
+      let s .= '%#TabLineSel#'
+    else
+      let s .= '%#TabLine#'
+    endif
+
+    "Указываем номер вкладки
+    let s .= ' ' . (i + 1) . ':'
+
+    "Получаем подпись (имя файла) из TabLabel
+    let s .= ' %{TabLabel(' . (i + 1) . ')} '
+  endfor
+
+  " after the last tab fill with TabLineFill and reset tab page nr
+  let s .= '%#TabLineFill#%T'
+
+  return s
+endfunction
+
+function TabLabel(n)
+  let buflist = tabpagebuflist(a:n)
+  let winnr = tabpagewinnr(a:n)
+
+  return bufname(buflist[winnr - 1])
+endfunction
 
 "Включает колонку нумерации строк
 set number
@@ -100,21 +123,19 @@ set softtabstop=4
 set autoindent
 set smartindent
 
-"Ограничиваем себя в размере строки
-set colorcolumn=80
-
 "Заставляем себя юзать только hjkl
-nnoremap <Left> :echoe "Use H pls"<CR>
-nnoremap <Right> :echoe "Use L pls"<CR>
-nnoremap <Up> :echoe "Use K pls"<CR>
-nnoremap <Down> :echoe "Use J pls"<CR>
+"nnoremap <Left> :echoe "Use H pls"<CR>
+"nnoremap <Right> :echoe "Use L pls"<CR>
+"nnoremap <Up> :echoe "Use K pls"<CR>
+"nnoremap <Down> :echoe "Use J pls"<CR>
 
 "Не тянись до ESC
 imap jk <ESC>
 
 "Кеймапы для запуска Python скриптов
 autocmd VimEnter *.py nmap <F5> :!python3 %<CR>
-autocmd VimEnter *.py nmap <F9> :!pylint %<CR>
+autocmd VimEnter *.py nmap <F9> :make<CR>
+autocmd VimEnter *.py set colorcolumn=80<CR>
 
 "Кеймапы запуска Bash скриптов
 autocmd VimEnter *.sh nnoremap <F5> :!bash %<CR>
@@ -130,6 +151,15 @@ colorscheme custom_scheme_dark
 
 "Довольно удобная реализация поддержки русских букв (говорят официальная)
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+
+function LessBehaviour()
+    if (!&modifiable || &ro)
+        set nonumber
+        set nospell
+        set laststatus=0
+        set cmdheight=1
+    endif
+endfunction
 
 "Автоматическое включение LessBehaviour
 augroup ReadOnly
