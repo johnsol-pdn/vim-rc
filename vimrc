@@ -52,9 +52,6 @@ set nocompatible
 
 set encoding=utf8
 
-set showtabline=2
-set tabline=%!TabLine()
-
 function TabLine()
   let s = ''
 
@@ -85,6 +82,9 @@ function TabLabel(n)
 
   return bufname(buflist[winnr - 1])
 endfunction
+
+set showtabline=2
+set tabline=%!TabLine()
 
 "Включает колонку нумерации строк
 set number

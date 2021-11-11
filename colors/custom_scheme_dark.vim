@@ -18,9 +18,9 @@ hi NonText                                ctermfg=215
 hi Visual                                              ctermbg=241
 hi ColorColumn                                         ctermbg=250
 
-hi TabLine                cterm=underline ctermfg=252  ctermbg=None
+hi TabLine                cterm=None      ctermfg=252  ctermbg=236
 hi TabLineSel             cterm=None      ctermfg=0    ctermbg=111
-hi TabLineFill            cterm=underline ctermfg=None ctermbg=None
+hi TabLineFill            cterm=None      ctermfg=None ctermbg=236
 
 " для заголовков markdown
 hi Title                  cterm=bold      ctermfg=171
