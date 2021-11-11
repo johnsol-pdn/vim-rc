@@ -133,18 +133,22 @@ set smartindent
 imap jk <ESC>
 
 "Кеймапы для запуска Python скриптов
-autocmd VimEnter *.py nmap <F5> :!python3 %<CR>
-autocmd VimEnter *.py nmap <F9> :make<CR>
-autocmd VimEnter *.py set colorcolumn=80<CR>
+autocmd BufEnter *.py nmap <F5> :!python3 %<CR>
+autocmd BufEnter *.py nmap <F9> :make<CR>
+autocmd BufEnter *.py compiler pycodestyle
+autocmd BufEnter *.py set colorcolumn=80
+autocmd BufLeave *.py set colorcolumn=0
 
 "Кеймапы запуска Bash скриптов
-autocmd VimEnter *.sh nnoremap <F5> :!bash %<CR>
+autocmd BufEnter *.sh nnoremap <F5> :!bash %<CR>
 
 "Перенос сток для .md файлов
-autocmd VimEnter *.md set wrap
+autocmd BufEnter *.md set wrap
+autocmd BufEnter *.md set colorcolumn=80
+autocmd BufLeave *.md set colorcolumn=0
 
 "Кеймапы обновления темы vim
-autocmd VimEnter *.vim nnoremap <F5> :source %<CR>
+autocmd BufEnter *.vim nnoremap <F5> :source %<CR>
 
 "Установка своей цветовой схемы
 colorscheme custom_scheme_dark
