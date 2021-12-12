@@ -12,7 +12,7 @@ let color_name="custom_scheme_dark"
 hi Normal                                              ctermbg=None
 hi LineNr                 cterm=NONE      ctermfg=241  ctermbg=NONE
 hi CursorLineNr           cterm=bold      ctermfg=250  ctermbg=237
-hi CursorLine             cterm=underline
+hi CursorLine             cterm=NONE
 hi ModeMsg                cterm=NONE      ctermfg=0    ctermbg=14
 hi NonText                                ctermfg=215
 hi Visual                                              ctermbg=241
