@@ -1,3 +1,4 @@
+" === Пользовательские функции ===
 "Функция получения текущего режима редактора
 function GetMode()
     let l:editor_mode = mode()
@@ -37,21 +38,6 @@ function GetMode()
     endif
 endfunction
 
-"Менеджер плагинов: Vim-Plug
-"Подключение плагинов (для установки - :PlugInstal)
-call plug#begin('~/.vim/plugged')
-    Plug 'airblade/vim-gitgutter'
-call plug#end()
-
-"Включаем подсветку синтаксиса
-syntax on
-
-set nocompatible
-" Включение поддержки мыши
-"set mouse=a
-
-set encoding=utf8
-
 function TabLine()
   let s = ''
 
@@ -83,6 +69,30 @@ function TabLabel(n)
   return bufname(buflist[winnr - 1])
 endfunction
 
+function LessBehaviour()
+    if (!&modifiable || &ro)
+        set nonumber
+        set nospell
+        set laststatus=0
+        set cmdheight=1
+    endif
+endfunction
+
+" === Плагины ===
+"Менеджер плагинов: Vim-Plug
+"Подключение плагинов (для установки - :PlugInstal)
+call plug#begin('~/.vim/plugged')
+    Plug 'airblade/vim-gitgutter'
+call plug#end()
+
+" === Настройки ===
+"Включаем подсветку синтаксиса
+syntax on
+
+set nocompatible
+
+set encoding=utf8
+
 set showtabline=2
 set tabline=%!TabLine()
 
@@ -91,7 +101,7 @@ set number
 set numberwidth=4
 set cursorline
 
-"Не показывать режим (он отображается в нашей строке статуса)
+"Не показывать режим (он отображается в кастомной строке статуса)
 set noshowmode
 
 "Настройки строки статуса
@@ -156,14 +166,6 @@ colorscheme custom_scheme_dark
 "Довольно удобная реализация поддержки русских букв (говорят официальная)
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
-function LessBehaviour()
-    if (!&modifiable || &ro)
-        set nonumber
-        set nospell
-        set laststatus=0
-        set cmdheight=1
-    endif
-endfunction
 
 "Автоматическое включение LessBehaviour
 augroup ReadOnly

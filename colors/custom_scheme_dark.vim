@@ -19,21 +19,21 @@ hi Visual                                              ctermbg=241
 hi ColorColumn                                         ctermbg=250
 
 hi TabLine                cterm=None      ctermfg=252  ctermbg=236
-hi TabLineSel             cterm=None      ctermfg=0    ctermbg=111
+hi TabLineSel             cterm=None      ctermfg=0    ctermbg=208
 hi TabLineFill            cterm=None      ctermfg=None ctermbg=236
 
 " для заголовков markdown
 hi Title                  cterm=bold      ctermfg=171
 
 "Цвета, используемые в статусной строке
-hi StatusLineEditorMode                   ctermfg=0    ctermbg=111
+hi StatusLineEditorMode                   ctermfg=0    ctermbg=190
 hi StatusLineFileName     cterm=bold      ctermfg=252  ctermbg=NONE
 hi StatusLineFileFormat                   ctermfg=247  ctermbg=NONE
 hi StatusLineEmpty                                     ctermbg=NONE
 hi StatusLineReadOnlyFlag                 ctermfg=247  ctermbg=NONE
 hi StatusLineEncoding                     ctermfg=247  ctermbg=NONE
 hi StatusLineFileType     cterm=bold      ctermfg=252  ctermbg=NONE
-hi StatusLinePosition                     ctermfg=0    ctermbg=111
+hi StatusLinePosition                     ctermfg=0    ctermbg=190
 
 "Vim-Gitgutter цвета
 hi SignColumn                                          ctermbg=NONE
