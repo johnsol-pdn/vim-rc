@@ -22,9 +22,6 @@ hi TabLine                cterm=None      ctermfg=252  ctermbg=236
 hi TabLineSel             cterm=None      ctermfg=0    ctermbg=208
 hi TabLineFill            cterm=None      ctermfg=None ctermbg=236
 
-" для заголовков markdown
-hi Title                  cterm=bold      ctermfg=171
-
 "Цвета, используемые в статусной строке
 hi StatusLineEditorMode                   ctermfg=0    ctermbg=190
 hi StatusLineFileName     cterm=bold      ctermfg=252  ctermbg=NONE
@@ -35,13 +32,10 @@ hi StatusLineEncoding                     ctermfg=247  ctermbg=NONE
 hi StatusLineFileType     cterm=bold      ctermfg=252  ctermbg=NONE
 hi StatusLinePosition                     ctermfg=0    ctermbg=190
 
-"Vim-Gitgutter цвета
-hi SignColumn                                          ctermbg=NONE
-hi GitGutterAdd           cterm=bold      ctermfg=2
-hi GitGutterChange        cterm=bold      ctermfg=3
-hi GitGutterDelete        cterm=bold      ctermfg=1
-
 "=== Подсвтека синтаксиса ===
+" для заголовков markdown
+hi Title                  cterm=bold      ctermfg=171
+
 hi Comment                                ctermfg=248
 
 hi Constant                               ctermfg=153
