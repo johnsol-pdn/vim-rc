@@ -9,11 +9,12 @@ let color_name="custom_scheme_dark"
 
 "=== Цвета псевдоинтерфейса ===
 "Цвета линейки строк (та, что слева номера строк показыват)
-hi Normal                                              ctermbg=None
-hi LineNr                 cterm=NONE      ctermfg=241  ctermbg=NONE
+hi Normal                                              ctermbg=none
+hi LineNr                 cterm=none      ctermfg=241  ctermbg=none
 hi CursorLineNr           cterm=bold      ctermfg=250  ctermbg=237
-hi CursorLine             cterm=NONE
-hi ModeMsg                cterm=NONE      ctermfg=0    ctermbg=14
+hi CursorLine             cterm=none
+hi Folded                 cterm=none      ctermfg=93   ctermbg=none
+hi ModeMsg                cterm=none      ctermfg=0    ctermbg=14
 hi NonText                                ctermfg=215
 hi Visual                                              ctermbg=241
 hi ColorColumn                                         ctermbg=250
@@ -24,12 +25,12 @@ hi TabLineFill            cterm=None      ctermfg=None ctermbg=236
 
 "Цвета, используемые в статусной строке
 hi StatusLineEditorMode                   ctermfg=0    ctermbg=190
-hi StatusLineFileName     cterm=bold      ctermfg=252  ctermbg=NONE
-hi StatusLineFileFormat                   ctermfg=247  ctermbg=NONE
-hi StatusLineEmpty                                     ctermbg=NONE
-hi StatusLineReadOnlyFlag                 ctermfg=247  ctermbg=NONE
-hi StatusLineEncoding                     ctermfg=247  ctermbg=NONE
-hi StatusLineFileType     cterm=bold      ctermfg=252  ctermbg=NONE
+hi StatusLineFileName     cterm=bold      ctermfg=252  ctermbg=none
+hi StatusLineFileFormat                   ctermfg=247  ctermbg=none
+hi StatusLineEmpty                                     ctermbg=none
+hi StatusLineReadOnlyFlag                 ctermfg=247  ctermbg=none
+hi StatusLineEncoding                     ctermfg=247  ctermbg=none
+hi StatusLineFileType     cterm=bold      ctermfg=252  ctermbg=none
 hi StatusLinePosition                     ctermfg=0    ctermbg=190
 
 "=== Подсвтека синтаксиса ===
@@ -43,7 +44,7 @@ hi String                                 ctermfg=43
 hi Number                                 ctermfg=50
 hi Boolean                                ctermfg=197
 
-hi Identifier             cterm=NONE      ctermfg=147
+hi Identifier             cterm=none      ctermfg=147
 hi Function                               ctermfg=45
 
 hi Statement                              ctermfg=171
