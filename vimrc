@@ -14,6 +14,9 @@ set number
 set numberwidth=4
 set cursorline
 
+"Подсветка найденных фраз
+set hlsearch
+
 "Не показывать режим (он отображается в кастомной строке статуса)
 set noshowmode
 
@@ -49,20 +52,22 @@ set smartindent
 "Не тянись до ESC
 imap jk <ESC>
 
-"Кеймапы для запуска Python скриптов
-autocmd BufEnter *.py nmap <F5> :!python3 %<CR>
-autocmd BufEnter *.py nmap <F9> :make<CR>
-autocmd BufEnter *.py compiler pycodestyle
+"Автонастройка для определенных типов файлов
 autocmd BufEnter *.py set colorcolumn=80
 autocmd BufLeave *.py set colorcolumn=0
 
-"Кеймапы запуска Bash скриптов
-autocmd BufEnter *.sh nnoremap <F5> :!bash %<CR>
+autocmd BufEnter *.py compiler pycodestyle
 
-"Перенос сток для .md файлов
 autocmd BufEnter *.md set wrap
 autocmd BufEnter *.md set colorcolumn=80
 autocmd BufLeave *.md set colorcolumn=0
+
+"Кеймапы для запуска Python скриптов
+autocmd BufEnter *.py nmap <F5> :!python3 %<CR>
+autocmd BufEnter *.py nmap <F9> :make<CR>
+
+"Кеймапы запуска Bash скриптов
+autocmd BufEnter *.sh nmap <F5> :!bash %<CR>
 
 "Кеймапы обновления темы vim
 autocmd BufEnter *.vim nnoremap <F5> :source %<CR>
