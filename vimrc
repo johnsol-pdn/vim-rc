@@ -64,6 +64,8 @@ autocmd BufEnter *.py compiler pycodestyle
 autocmd BufEnter *.md set wrap
 autocmd BufEnter *.md set colorcolumn=80
 autocmd BufLeave *.md set colorcolumn=0
+autocmd BufEnter *.md set textwidth=80
+autocmd BufLeave *.md set textwidth=0
 
 "Кеймапы для запуска Python скриптов
 autocmd BufEnter *.py nmap <F5> :!python3 %<CR>
