@@ -1,4 +1,4 @@
-" === Настройки ===
+" === Общие настройки ===
 "Включаем подсветку синтаксиса
 syntax on
 
@@ -51,6 +51,16 @@ set softtabstop=4
 "Автодополнение отступов
 set autoindent
 set smartindent
+
+"=== GVIM ===
+"Настройка шрифта
+set guifont=Monospace\ 12
+"Отключение смены курсора в GVim
+set guicursor+=a:block-Cursor
+"Отключение меню, тулбара и полосы прокрутки
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
 
 "Не тянись до ESC
 imap jk <ESC>
