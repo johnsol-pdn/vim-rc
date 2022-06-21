@@ -77,3 +77,13 @@ function justmyrc#LessBehaviour()
         set cmdheight=1
     endif
 endfunction
+
+" CRITICAL! Bottom code add glitches!
+function justmyrc#GetGitBranch()
+    return trim(system("git rev-parse --abbrev-ref HEAD 2> /dev/null | tr -d '\n'"))
+endfunction
+
+function justmyrc#StatuslineGitBranch()
+    let l:branch_name = justmyrc#GitBranch()
+    return strlen(l:branch_name) > 0?' ' . l:branch_name:''
+endfunction

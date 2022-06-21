@@ -28,13 +28,11 @@ set laststatus=2
 
 set statusline=
 set statusline+=%#StatusLineEditorMode#\ %{justmyrc#GetMode()}\ 
-set statusline+=%#StatusLineFileName#\ %f\ 
 set statusline+=%#StatusLineFileFormat#\ %{&ff}\ 
 set statusline+=%#StatusLineEmpty#%=
 set statusline+=%#StatusLineReadOnlyFlag#\ %r\ 
 set statusline+=%#StatusLineEncoding#\ %{&fileencoding?&fileencoding:&encoding}\ 
 set statusline+=%#StatusLineFileType#\ %{&ft}\ 
-set statusline+=%#StatusLinePosition#\ %p%%\ %l:%c\ 
 
 "Выключает перенос строк
 set nowrap
