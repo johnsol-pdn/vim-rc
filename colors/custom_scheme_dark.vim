@@ -27,6 +27,7 @@ hi WildMenu               cterm=None      ctermfg=0    ctermbg=83
 
 "Цвета, используемые в статусной строке
 hi StatusLineEditorMode                   ctermfg=0    ctermbg=245
+hi StatusLineBranchName                   ctermfg=107  ctermbg=235
 hi StatusLineFileFormat                   ctermfg=247  ctermbg=235
 hi StatusLineEmpty                                     ctermbg=235
 hi StatusLineReadOnlyFlag                 ctermfg=247  ctermbg=235

@@ -28,7 +28,8 @@ set laststatus=2
 
 set statusline=
 set statusline+=%#StatusLineEditorMode#\ %{justmyrc#GetMode()}\ 
-set statusline+=%#StatusLineFileFormat#\ %{&ff}\ 
+set statusline+=%#StatusLineBranchName#\ %{justmyrc#GetGitBranch()}\ 
+set statusline+=%#StatusLineFileFormat#%{&ff}\ 
 set statusline+=%#StatusLineEmpty#%=
 set statusline+=%#StatusLineReadOnlyFlag#\ %r\ 
 set statusline+=%#StatusLineEncoding#\ %{&fileencoding?&fileencoding:&encoding}\ 
