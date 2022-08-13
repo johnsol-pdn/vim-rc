@@ -21,19 +21,18 @@ set hlsearch
 set wildmenu
 
 "Не показывать режим (он отображается в кастомной строке статуса)
-set noshowmode
+"set noshowmode
 
 "Настройки строки статуса
 set laststatus=2
 
 set statusline=
-set statusline+=%#StatusLineEditorMode#\ %{justmyrc#GetMode()}\ 
-set statusline+=%#StatusLineBranchName#\ %{justmyrc#GetGitBranch()}\ 
-set statusline+=%#StatusLineFileFormat#%{&ff}\ 
-set statusline+=%#StatusLineEmpty#%=
-set statusline+=%#StatusLineReadOnlyFlag#\ %r\ 
-set statusline+=%#StatusLineEncoding#\ %{&fileencoding?&fileencoding:&encoding}\ 
 set statusline+=%#StatusLineFileType#\ %{&ft}\ 
+set statusline+=%#StatusLineFileFormat#\ %{&ff}\ 
+set statusline+=%#StatusLineEmpty#%=
+set statusline+=%#StatusLineReadOnlyFlag#\ %r
+set statusline+=%#StatusLineEncoding#\ %{&fileencoding?&fileencoding:&encoding}\ 
+set statusline+=%#StatusLineFileType#\ %v:%l\ (%p%%)\ 
 
 "Выключает перенос строк
 set nowrap

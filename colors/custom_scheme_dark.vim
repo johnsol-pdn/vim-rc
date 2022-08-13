@@ -14,7 +14,7 @@ hi LineNr                 cterm=none      ctermfg=241  ctermbg=none
 hi CursorLineNr           cterm=bold      ctermfg=250  ctermbg=237
 hi CursorLine             cterm=none                   ctermbg=234
 hi Folded                 cterm=none      ctermfg=93   ctermbg=none
-hi ModeMsg                cterm=none      ctermfg=0    ctermbg=14
+hi ModeMsg                cterm=none      ctermfg=0    ctermbg=215
 hi NonText                                ctermfg=215
 hi Visual                                              ctermbg=241
 hi ColorColumn                                         ctermbg=235

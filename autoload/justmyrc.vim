@@ -73,11 +73,6 @@ function justmyrc#LessBehaviour()
     if (!&modifiable || &ro)
         set nonumber
         set nospell
-        set laststatus=0
         set cmdheight=1
     endif
-endfunction
-
-function justmyrc#GetGitBranch()
-    return system("git symbolic-ref --short HEAD 2> /dev/null | tr -d '\n'")
 endfunction
