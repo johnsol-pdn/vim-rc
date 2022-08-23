@@ -50,6 +50,9 @@ set softtabstop=4
 set autoindent
 set smartindent
 
+"Фикс Backspace после обновления до Vim9
+set backspace=indent,eol,start
+
 "=== GVIM ===
 "Настройка шрифта
 set guifont=Monospace\ 12
