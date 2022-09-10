@@ -12,6 +12,7 @@ set tabline=%!justmyrc#TabLine()
 "Включает колонку нумерации строк
 set number
 set numberwidth=4
+set relativenumber
 set cursorline
 
 "Подсветка найденных фраз
