@@ -10,7 +10,6 @@ set showtabline=2
 set tabline=%!justmyrc#TabLine()
 
 "Включает колонку нумерации строк
-set number
 set numberwidth=4
 set relativenumber
 set cursorline
@@ -28,6 +27,7 @@ set wildmenu
 set laststatus=2
 
 set statusline=
+set statusline+=%#StatusLineEditorMode#\ %{justmyrc#GetMode()}\ 
 set statusline+=%#StatusLineFileType#\ %{&ft}\ 
 set statusline+=%#StatusLineFileFormat#\ %{&ff}\ 
 set statusline+=%#StatusLineEmpty#%=
@@ -82,6 +82,9 @@ autocmd BufLeave *.md set textwidth=0
 "Кеймапы для запуска Python скриптов
 autocmd BufEnter *.py nmap <F5> :!python3 %<CR>
 autocmd BufEnter *.py nmap <F9> :make<CR>
+
+"Кеймап для GCC
+autocmd BufEnter *.c nmap <F5> :make<CR>
 
 "Кеймапы запуска Bash скриптов
 autocmd BufEnter *.sh nmap <F5> :!bash %<CR>

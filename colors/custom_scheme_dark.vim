@@ -33,7 +33,7 @@ hi StatusLineFileFormat                   ctermfg=247  ctermbg=235
 hi StatusLineEmpty                                     ctermbg=235
 hi StatusLineReadOnlyFlag                 ctermfg=247  ctermbg=235
 hi StatusLineEncoding                     ctermfg=247  ctermbg=235
-hi StatusLineFiletype                     ctermfg=0    ctermbg=245
+hi StatusLineFileType                     ctermfg=0    ctermbg=242
 
 "=== Подсвтека синтаксиса ===
 " для заголовков markdown
