@@ -26,6 +26,9 @@ hi TabLineFill            cterm=None      ctermfg=None ctermbg=235
 hi StatusLine             cterm=None      ctermfg=246  ctermbg=234
 hi WildMenu               cterm=None      ctermfg=0    ctermbg=246
 
+hi Pmenu                                  ctermfg=242  ctermbg=233
+hi PmenuSel                               ctermfg=7    ctermbg=235
+
 "Цвета, используемые в статусной строке
 hi StatusLineEditorMode                   ctermfg=0    ctermbg=245
 hi StatusLineBranchName                   ctermfg=107  ctermbg=235
