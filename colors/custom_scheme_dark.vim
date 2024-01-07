@@ -65,3 +65,7 @@ hi Special                                ctermfg=222
 
 hi Todo                   cterm=bold      ctermfg=0    ctermbg=186
 hi Error                                               ctermbg=197
+
+hi diffRemoved                                         ctermbg=1
+hi diffAdded                                           ctermbg=2
+hi diffChanged                                         ctermbg=2
