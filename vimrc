@@ -33,7 +33,8 @@ set statusline+=%#StatusLineFileFormat#\ %{&ff}\
 set statusline+=%#StatusLineEmpty#%=
 set statusline+=%#StatusLineReadOnlyFlag#\ %r
 set statusline+=%#StatusLineEncoding#\ %{&fileencoding?&fileencoding:&encoding}\ 
-set statusline+=%#StatusLineFileType#\ %v:%l\ (%p%%)\ 
+set statusline+=%#StatusLineRuler#\ %v:%l\ (%p%%)\ 
+set statusline+=%#StatusLineBranchName#\ %{justmyrc#GetBranchName()}\ 
 
 "Выключает перенос строк
 set nowrap

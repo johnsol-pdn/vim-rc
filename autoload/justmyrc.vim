@@ -38,6 +38,12 @@ function justmyrc#GetMode()
     endif
 endfunction
 
+function justmyrc#GetBranchName()
+    let l:status = trim(system("git rev-parse --abbrev-ref HEAD 2> /dev/null | tr -d '\r\n'"))
+
+    return l:status
+endfunction
+
 function justmyrc#TabLine()
   let l:s = ''
 
