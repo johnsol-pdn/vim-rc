@@ -38,6 +38,12 @@ hi StatusLineReadOnlyFlag                 ctermfg=247  ctermbg=235
 hi StatusLineEncoding                     ctermfg=247  ctermbg=235
 hi StatusLineFileType                     ctermfg=0    ctermbg=242
 
+"Netrw
+hi netrwDir               cterm=bold      ctermfg=220
+hi netrwLink              cterm=bold      ctermfg=99
+hi netrwSymLink           cterm=bold      ctermfg=99
+hi netrwExe               cterm=bold      ctermfg=2
+
 "=== Подсвтека синтаксиса ===
 " для заголовков markdown
 hi Title                  cterm=bold      ctermfg=189
@@ -63,7 +69,7 @@ hi Delimiter                              ctermfg=189
 
 hi Special                                ctermfg=222
 
-hi Todo                   cterm=bold      ctermfg=0    ctermbg=186
+hi Todo                   cterm=bold      ctermfg=255  ctermbg=130
 hi Error                                               ctermbg=197
 
 hi diffRemoved                                         ctermbg=1
