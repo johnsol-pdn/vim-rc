@@ -83,4 +83,4 @@ hi netrwExe                       cterm=bold      ctermfg=2
 " Diff
 hi diffRemoved                                                 ctermbg=1
 hi diffAdded                                                   ctermbg=2
-hi diffChanged                                                 ctermbg=2
+hi diffChanged                                                 ctermbg=3
