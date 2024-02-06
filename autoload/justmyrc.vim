@@ -1,5 +1,7 @@
 " === Пользовательские функции ===
 "Функция получения текущего режима редактора
+let g:git_branch = ""
+
 function justmyrc#GetMode()
     let l:editor_mode = mode()
 
@@ -38,10 +40,9 @@ function justmyrc#GetMode()
     endif
 endfunction
 
-function justmyrc#GetBranchName()
-    let l:status = trim(system("git rev-parse --abbrev-ref HEAD 2> /dev/null | tr -d '\r\n'"))
-
-    return l:status
+function justmyrc#GetBranchName(filename)
+    let l:cur_dir = fnamemodify(system("readlink -f " . a:filename), ":h")
+    let g:git_branch = trim(system("git -C " . l:cur_dir . " rev-parse --abbrev-ref HEAD 2> /dev/null | tr -d '\r\n'"))
 endfunction
 
 function justmyrc#TabLine()

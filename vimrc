@@ -34,7 +34,7 @@ set statusline+=%#StatusLineEmpty#%=
 set statusline+=%#StatusLineReadOnlyFlag#\ %r
 set statusline+=%#StatusLineEncoding#\ %{&fileencoding?&fileencoding:&encoding}\ 
 set statusline+=%#StatusLineRuler#\ %v:%l\ (%p%%)\ 
-set statusline+=%#StatusLineBranchName#\ %{justmyrc#GetBranchName()}\ 
+set statusline+=%#StatusLineBranchName#\ %{g:git_branch}\ 
 
 "Выключает перенос строк
 set nowrap
@@ -69,10 +69,18 @@ set guioptions-=r
 imap jk <ESC>
 
 "Автонастройка для определенных типов файлов
-autocmd BufEnter *.py set colorcolumn=80
-autocmd BufLeave *.py set colorcolumn=0
+augroup GitBranch
+    autocmd!
+    autocmd BufEnter,ShellCmdPost,FileChangedShellPost * call justmyrc#GetBranchName(expand("%"))
+    autocmd BufLeave * let g:git_branch = ""
+augroup END
 
-autocmd BufEnter *.py compiler pycodestyle
+augroup Python
+    autocmd BufEnter *.py set colorcolumn=80
+    autocmd BufLeave *.py set colorcolumn=0
+
+    autocmd BufEnter *.py compiler pycodestyle
+augroup END
 
 autocmd BufEnter *.md set wrap
 autocmd BufEnter *.md set colorcolumn=80
