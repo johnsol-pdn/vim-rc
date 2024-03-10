@@ -68,6 +68,9 @@ set guioptions-=r
 "Не тянись до ESC
 imap jk <ESC>
 
+"Сброс подсветки поиска в нормальном режиме
+nmap <space> :set nohlsearch<CR>
+
 "Автонастройка для определенных типов файлов
 augroup GitBranch
     autocmd!
