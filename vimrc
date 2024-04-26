@@ -94,6 +94,9 @@ augroup END
 autocmd BufEnter *.py nmap <F5> :!python3 %<CR>
 autocmd BufEnter *.py nmap <F9> :make<CR>
 
+"Автообнаружение файла nftables
+autocmd BufRead,BufNewFile nftables.conf,*.nft,*/etc/nftables/* set filetype=nftables
+
 "Кеймап для GCC
 autocmd BufEnter *.c nmap <F5> :make<CR>
 
