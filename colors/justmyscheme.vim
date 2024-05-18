@@ -22,6 +22,7 @@ hi ModeMsg                        cterm=none      ctermfg=0    ctermbg=120
 hi NonText                                        ctermfg=215
 hi Visual                                                      ctermbg=59
 hi ColorColumn                                                 ctermbg=235
+hi VertSplit                      cterm=none      ctermfg=120  ctermbg=none
 
 "=== Строка вкладок ===
 hi TabLine                        cterm=none      ctermfg=252  ctermbg=235

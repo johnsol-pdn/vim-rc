@@ -19,6 +19,8 @@ set hlsearch
 
 "Включение подсказок команд
 set wildmenu
+"Игнорировать расширения в подсказках
+set wildignore=*.o,*.obj,*.pyc,__pycache__
 
 "Не показывать режим (он отображается в кастомной строке статуса)
 "set noshowmode
@@ -52,18 +54,10 @@ set softtabstop=4
 set autoindent
 set smartindent
 
+set autoread
+
 "Фикс Backspace после обновления до Vim9
 set backspace=indent,eol,start
-
-"=== GVIM ===
-"Настройка шрифта
-set guifont=Monospace\ 12
-"Отключение смены курсора в GVim
-set guicursor+=a:block-Cursor
-"Отключение меню, тулбара и полосы прокрутки
-set guioptions-=m
-set guioptions-=T
-set guioptions-=r
 
 "Не тянись до ESC
 imap jk <ESC>
@@ -92,7 +86,6 @@ augroup END
 
 "Кеймапы для запуска Python скриптов
 autocmd BufEnter *.py nmap <F5> :!python3 %<CR>
-autocmd BufEnter *.py nmap <F9> :make<CR>
 
 "Автообнаружение файла nftables
 autocmd BufRead,BufNewFile nftables.conf,*.nft,*/etc/nftables/* set filetype=nftables
