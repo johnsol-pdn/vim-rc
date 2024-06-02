@@ -25,6 +25,9 @@ set wildignore=*.o,*.obj,*.pyc,__pycache__
 "Не показывать режим (он отображается в кастомной строке статуса)
 "set noshowmode
 
+"Читать modeline при запуске
+set modeline
+
 "Настройки строки статуса
 set laststatus=2
 
