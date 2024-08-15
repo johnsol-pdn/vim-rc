@@ -83,8 +83,6 @@ augroup Markdown
     autocmd BufEnter *.md set wrap
     autocmd BufEnter *.md set colorcolumn=80
     autocmd BufLeave *.md set colorcolumn=0
-    autocmd BufEnter *.md set textwidth=80
-    autocmd BufLeave *.md set textwidth=0
 augroup END
 
 "Кеймапы для запуска Python скриптов
