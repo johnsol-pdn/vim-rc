@@ -11,11 +11,17 @@ set tabline=%!justmyrc#TabLine()
 
 "Включает колонку нумерации строк
 set numberwidth=4
+"Показывает относительные значения (от текущей строки)
 set relativenumber
+"Отображает номер у текущей строки в комбинации с относительной позицией
+set number
 set cursorline
 
 "Подсветка найденных фраз
 set hlsearch
+
+"Подсветка фраз при наборе текста для поиска
+set incsearch
 
 "Включение подсказок команд
 set wildmenu
@@ -66,7 +72,7 @@ set backspace=indent,eol,start
 imap jk <ESC>
 
 "Сброс подсветки поиска в нормальном режиме
-nmap <space> :set nohlsearch<CR>
+nmap <space> :noh<CR>
 
 "Автонастройка для определенных типов файлов
 augroup GitBranch
@@ -77,28 +83,38 @@ augroup END
 
 augroup Python
     autocmd BufEnter *.py compiler pycodestyle
+    "Кеймапы для запуска Python скриптов
+    autocmd BufEnter *.py nmap <F5> :!python3 %<CR>
 augroup END
 
 augroup Markdown
     autocmd BufEnter *.md set wrap
     autocmd BufEnter *.md set colorcolumn=80
     autocmd BufLeave *.md set colorcolumn=0
+    autocmd BufEnter *.md set textwidth=80
+    autocmd BufLeave *.md set textwidth=0
 augroup END
 
-"Кеймапы для запуска Python скриптов
-autocmd BufEnter *.py nmap <F5> :!python3 %<CR>
+augroup Clang
+    "Кеймап для GCC
+    autocmd BufEnter *.c nmap <F5> :make<CR>
+augroup END
 
-"Автообнаружение файла nftables
-autocmd BufRead,BufNewFile nftables.conf,*.nft,*/etc/nftables/* set filetype=nftables
+augroup Nftables
+    "Автообнаружение файла nftables
+    autocmd BufRead,BufNewFile nftables.conf,*.nft,*/etc/nftables/* set filetype=nftables
+augroup END
 
-"Кеймап для GCC
-autocmd BufEnter *.c nmap <F5> :make<CR>
+augroup Bash
+    "Кеймапы запуска Bash скриптов
+    autocmd BufEnter *.sh nmap <F5> :!bash %<CR>
+augroup END
 
-"Кеймапы запуска Bash скриптов
-autocmd BufEnter *.sh nmap <F5> :!bash %<CR>
-
-"Кеймапы обновления темы vim
-autocmd BufEnter *.vim nnoremap <F5> :source %<CR>
+augroup Vim
+    "Кеймапы обновления темы vim
+    autocmd BufEnter vimrc nnoremap <F5> :source %<CR>
+    autocmd BufEnter *.vim nnoremap <F5> :source %<CR>
+augroup END
 
 "Установка своей цветовой схемы
 colorscheme justmyscheme
