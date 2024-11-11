@@ -68,6 +68,12 @@ set autoread
 "Фикс Backspace после обновления до Vim9
 set backspace=indent,eol,start
 
+"Отступ в количестве строк (не включая ту, на которой курсор) при прокрутке (очень годная вещь)
+set scrolloff=2
+
+"Параметры сохранения позиции курсора в файлах
+set viminfo='10,\"100,:20,%,n~/.viminfo
+
 "Не тянись до ESC
 imap jk <ESC>
 
@@ -82,12 +88,14 @@ augroup GitBranch
 augroup END
 
 augroup Python
+    autocmd!
     autocmd BufEnter *.py compiler pycodestyle
     "Кеймапы для запуска Python скриптов
     autocmd BufEnter *.py nmap <F5> :!python3 %<CR>
 augroup END
 
 augroup Markdown
+    autocmd!
     autocmd BufEnter *.md set wrap
     autocmd BufEnter *.md set colorcolumn=80
     autocmd BufLeave *.md set colorcolumn=0
@@ -96,24 +104,41 @@ augroup Markdown
 augroup END
 
 augroup Clang
+    autocmd!
     "Кеймап для GCC
     autocmd BufEnter *.c nmap <F5> :make<CR>
 augroup END
 
 augroup Nftables
+    autocmd!
     "Автообнаружение файла nftables
     autocmd BufRead,BufNewFile nftables.conf,*.nft,*/etc/nftables/* set filetype=nftables
 augroup END
 
 augroup Bash
+    autocmd!
     "Кеймапы запуска Bash скриптов
     autocmd BufEnter *.sh nmap <F5> :!bash %<CR>
 augroup END
 
 augroup Vim
+    autocmd!
     "Кеймапы обновления темы vim
     autocmd BufEnter vimrc nnoremap <F5> :source %<CR>
     autocmd BufEnter *.vim nnoremap <F5> :source %<CR>
+augroup END
+
+augroup vimStartup
+    autocmd!
+
+    "Возвращать курсор на последнюю позицию в этом файле
+    " NOTE: взято из оригинального конфига Vim ($VIMRUNTIME/defaults)
+    autocmd BufReadPost *
+      \ let line = line("'\"")
+      \ | if line >= 1 && line <= line("$") && &filetype !~# 'commit'
+      \      && index(['xxd', 'gitrebase'], &filetype) == -1
+      \ |   execute "normal! g`\""
+      \ | endif
 augroup END
 
 "Установка своей цветовой схемы
