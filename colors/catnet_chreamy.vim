@@ -1,3 +1,8 @@
+" Name:        CatNet Creamy
+" Author:      John Solntsev <johnsol@internet.ru>
+" License:     Same as Vim
+" Last Change: 2024 Nov 30
+
 hi clear
 
 if exists("syntax_on")
@@ -5,11 +10,11 @@ if exists("syntax_on")
 endif
 
 set bg=dark
-let color_name="justmyscheme"
+let colors_name="catnet_chreamy"
 
 "=== Пользовательские цвета ===
-hi      justmyschemeMainColor          cterm=none      ctermfg=0    ctermbg=222
-hi      justmyschemeSecondColor                        ctermfg=0    ctermbg=216
+hi      MainColor          cterm=none      ctermfg=0    ctermbg=222
+hi      SecondColor                        ctermfg=0    ctermbg=216
 
 "=== Основного интерфейса интерфейса ===
 hi      Normal                                                      ctermbg=none
@@ -37,14 +42,14 @@ hi      PmenuSel                                       ctermfg=7    ctermbg=235
 
 " Статусная строка
 hi      StatusLine                     cterm=none      ctermfg=246  ctermbg=234
-hi link StatusLineEditorMode justmyschemeMainColor
-hi link StatusLineFileType   justmyschemeSecondColor
+hi link StatusLineEditorMode MainColor
+hi link StatusLineBranchName SecondColor
 hi      StatusLineFileFormat                           ctermfg=247  ctermbg=235
 hi      StatusLineEmpty                                             ctermbg=235
 hi      StatusLineReadOnlyFlag                         ctermfg=247  ctermbg=235
 hi      StatusLineEncoding                             ctermfg=247  ctermbg=235
-hi link StatusLineRuler      justmyschemeSecondColor
-hi link StatusLineBranchName justmyschemeMainColor
+hi link StatusLineRuler      SecondColor
+hi link StatusLineFileType   MainColor
 
 "=== Подсвтека синтаксиса ===
 " Заголовки Markdown

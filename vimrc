@@ -29,7 +29,7 @@ set wildmenu
 set wildignore=*.o,*.obj,*.pyc,__pycache__
 
 "Не показывать режим (он отображается в кастомной строке статуса)
-"set noshowmode
+set noshowmode
 
 "Читать modeline при запуске
 set modeline
@@ -39,13 +39,13 @@ set laststatus=2
 
 set statusline=
 set statusline+=%#StatusLineEditorMode#\ %{justmyrc#GetMode()}\ 
-set statusline+=%#StatusLineFileType#\ %{&ft}\ 
+set statusline+=%#StatusLineBranchName#\ %{g:git_branch}\ 
 set statusline+=%#StatusLineFileFormat#\ %{&ff}\ 
 set statusline+=%#StatusLineEmpty#%=
 set statusline+=%#StatusLineReadOnlyFlag#\ %r
 set statusline+=%#StatusLineEncoding#\ %{&fileencoding?&fileencoding:&encoding}\ 
 set statusline+=%#StatusLineRuler#\ %v:%l\ (%p%%)\ 
-set statusline+=%#StatusLineBranchName#\ %{g:git_branch}\ 
+set statusline+=%#StatusLineFileType#\ %{&ft}\ 
 
 "Выключает перенос строк
 set nowrap
@@ -80,13 +80,13 @@ imap jk <ESC>
 "Сброс подсветки поиска в нормальном режиме
 nmap <space> :noh<CR>
 
-"Автонастройка для определенных типов файлов
 augroup GitBranch
     autocmd!
     autocmd BufEnter,ShellCmdPost,FileChangedShellPost * call justmyrc#GetBranchName(expand("%"))
     autocmd BufLeave * let g:git_branch = ""
 augroup END
 
+"Автонастройка для определенных типов файлов
 augroup Python
     autocmd!
     autocmd BufEnter *.py compiler pycodestyle
@@ -142,7 +142,7 @@ augroup vimStartup
 augroup END
 
 "Установка своей цветовой схемы
-colorscheme justmyscheme
+colorscheme catnet_chreamy
 
 "Довольно удобная реализация поддержки русских букв (говорят официальная)
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz

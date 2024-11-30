@@ -1,3 +1,8 @@
+" Name:        justmyrc
+" Author:      John Solntsev <johnsol@internet.ru>
+" License:     Same as Vim
+" Last Change: 2024 Nov 30
+
 " === Пользовательские функции ===
 "Функция получения текущего режима редактора
 let g:git_branch = ""
